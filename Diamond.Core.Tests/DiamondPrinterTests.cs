@@ -30,5 +30,15 @@ namespace Diamond.Core.Tests
             // assert
             Assert.AreEqual("ABB", result);
         }
+
+        [Test]
+        public void GivenC_PrintsABBCC()
+        {
+            // act
+            var result = printer.Print('C');
+
+            // assert
+            Assert.AreEqual("ABBCC", result);
+        }
     }
 }
