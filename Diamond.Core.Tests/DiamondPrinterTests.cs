@@ -12,33 +12,33 @@ namespace Diamond.Core.Tests
         }
 
         [Test]
-        public void GivenA_PrintsA()
+        public void GivenA_PrintsA_WithNewLines()
         {
             // act
             var result = printer.Print('A');
 
             // assert
-            Assert.AreEqual("A", result);
+            Assert.AreEqual("A\r\n", result);
         }
 
         [Test]
-        public void GivenB_PrintsABB()
+        public void GivenB_PrintsABB_WithNewLines()
         {
             // act
             var result = printer.Print('B');
 
             // assert
-            Assert.AreEqual("ABB", result);
+            Assert.AreEqual("A\r\nBB\r\n", result);
         }
 
         [Test]
-        public void GivenC_PrintsABBCC()
+        public void GivenC_PrintsABBCC_WithNewLines()
         {
             // act
             var result = printer.Print('C');
 
             // assert
-            Assert.AreEqual("ABBCC", result);
+            Assert.AreEqual("A\r\nBB\r\nCC\r\n", result);
         }
     }
 }
