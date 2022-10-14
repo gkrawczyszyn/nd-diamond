@@ -22,7 +22,7 @@ namespace Diamond.Core.Tests
         }
 
         [Test]
-        public void GivenB_PrintsABB_WithNewLines_AndSpaces()
+        public void GivenB_PrintsABB_WithNewLines_AndSpaces_AndCorrectSuffix()
         {
             // act
             var result = printer.Print('B');
@@ -30,7 +30,8 @@ namespace Diamond.Core.Tests
             // assert
             Assert.AreEqual(
                 " A" + Environment.NewLine +
-                "B B" + Environment.NewLine, result);
+                "B B" + Environment.NewLine +
+                " A" + Environment.NewLine, result);
         }
 
         [Test]
@@ -43,7 +44,9 @@ namespace Diamond.Core.Tests
             Assert.AreEqual(
                 "  A" + Environment.NewLine +
                 " B B" + Environment.NewLine +
-                "C   C" + Environment.NewLine, result);
+                "C   C" + Environment.NewLine +
+                " B B" + Environment.NewLine +
+                "  A" + Environment.NewLine, result);
         }
     }
 }
