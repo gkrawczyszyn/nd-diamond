@@ -48,5 +48,14 @@ namespace Diamond.Core.Tests
                 " B B" + Environment.NewLine +
                 "  A" + Environment.NewLine, result);
         }
+
+        [TestCase('a')]
+        [TestCase('1')]
+        [TestCase('&')]
+        public void GivenNotSuportedChar_ArgumentException(char c)
+        {
+            // act
+            Assert.Throws<ArgumentException>(() => printer.Print(c));
+        }
     }
 }
