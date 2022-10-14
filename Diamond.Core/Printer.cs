@@ -1,15 +1,30 @@
-﻿namespace Diamond.Core
+﻿using System.Text;
+
+namespace Diamond.Core
 {
     public class DiamondPrinter
     {
-        public string Print(char c)
+        private const string AvailableChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+        public string Print(char letter)
         {
-            if (c == 'A')
+            var letterIndex = AvailableChars.IndexOf(letter);
+            var sb = new StringBuilder();
+
+            for (var i = 0; i <= letterIndex; i++)
             {
-                return "A";
+                var currentLetter = AvailableChars[i];
+                if (currentLetter == 'A')
+                {
+                    sb.Append("A");
+                }
+                else
+                {
+                    sb.Append($"{currentLetter}{currentLetter}");
+                }
             }
 
-            return null;
+            return sb.ToString();
         }
     }
 }
