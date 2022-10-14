@@ -13,14 +13,19 @@ namespace Diamond.Core
 
             for (var i = 0; i <= letterIndex; i++)
             {
+                var spacesBeforeCount = letterIndex - i;
+                var spacesBefore = new string(' ', spacesBeforeCount);
+
                 var currentLetter = AvailableChars[i];
                 if (currentLetter == 'A')
                 {
-                    sb.AppendLine("A");
+                    sb.AppendLine($"{spacesBefore}A");
                 }
                 else
                 {
-                    sb.AppendLine($"{currentLetter}{currentLetter}");
+                    var spacesBetweenCount = i * 2 - 1;
+                    var spacesBetween = new string(' ', spacesBetweenCount);
+                    sb.AppendLine($"{spacesBefore}{currentLetter}{spacesBetween}{currentLetter}");
                 }
             }
 
