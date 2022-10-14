@@ -16,11 +16,11 @@ namespace Diamond.Core
                 var currentLetter = AvailableChars[i];
                 if (currentLetter == 'A')
                 {
-                    sb.Append("A");
+                    sb.AppendLine("A");
                 }
                 else
                 {
-                    sb.Append($"{currentLetter}{currentLetter}");
+                    sb.AppendLine($"{currentLetter}{currentLetter}");
                 }
             }
 
