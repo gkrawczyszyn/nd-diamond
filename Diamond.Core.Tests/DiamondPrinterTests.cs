@@ -12,7 +12,7 @@ namespace Diamond.Core.Tests
         }
 
         [Test]
-        public void GivenA_PrintsA_WithNewLines()
+        public void GivenA_PrintsA_WithNewLines_AndSpaces()
         {
             // act
             var result = printer.Print('A');
@@ -22,23 +22,28 @@ namespace Diamond.Core.Tests
         }
 
         [Test]
-        public void GivenB_PrintsABB_WithNewLines()
+        public void GivenB_PrintsABB_WithNewLines_AndSpaces()
         {
             // act
             var result = printer.Print('B');
 
             // assert
-            Assert.AreEqual("A\r\nBB\r\n", result);
+            Assert.AreEqual(
+                " A" + Environment.NewLine +
+                "B B" + Environment.NewLine, result);
         }
 
         [Test]
-        public void GivenC_PrintsABBCC_WithNewLines()
+        public void GivenC_PrintsABBCC_WithNewLines_AndSpaces()
         {
             // act
             var result = printer.Print('C');
 
             // assert
-            Assert.AreEqual("A\r\nBB\r\nCC\r\n", result);
+            Assert.AreEqual(
+                "  A" + Environment.NewLine +
+                " B B" + Environment.NewLine +
+                "C   C" + Environment.NewLine, result);
         }
     }
 }
