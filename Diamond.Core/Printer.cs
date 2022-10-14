@@ -9,6 +9,12 @@ namespace Diamond.Core
         public string Print(char letter)
         {
             var letterIndex = AvailableChars.IndexOf(letter);
+
+            if (letterIndex < 0)
+            {
+                throw new ArgumentException($"Character '{letter}' not supported");
+            }
+
             var sb = new StringBuilder();
 
             for (var i = 0; i <= letterIndex; i++)
