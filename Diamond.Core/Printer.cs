@@ -15,6 +15,30 @@ namespace Diamond.Core
                 throw new ArgumentException($"Character '{letter}' not supported");
             }
 
+            var sb = PrintTopOfDiamond(letterIndex);
+
+            var topHalf = sb.ToString();
+            if (letter == 'A')
+            {
+                return topHalf;
+            }
+
+            PrintBottomOfDiamond(topHalf, sb);
+
+            return sb.ToString();
+        }
+
+        private static void PrintBottomOfDiamond(string topHalf, StringBuilder sb)
+        {
+            var lines = topHalf.Split(Environment.NewLine, StringSplitOptions.RemoveEmptyEntries);
+            for (var i = lines.Length - 2; i >= 0; i--)
+            {
+                sb.AppendLine(lines[i]);
+            }
+        }
+
+        private static StringBuilder PrintTopOfDiamond(int letterIndex)
+        {
             var sb = new StringBuilder();
 
             for (var i = 0; i <= letterIndex; i++)
@@ -35,19 +59,7 @@ namespace Diamond.Core
                 }
             }
 
-            var firstHalf = sb.ToString();
-            if (letter == 'A')
-            {
-                return firstHalf;
-            }
-
-            var lines = firstHalf.Split(Environment.NewLine, StringSplitOptions.RemoveEmptyEntries);
-            for (int i = lines.Length - 2; i >= 0; i--)
-            {
-                sb.AppendLine(lines[i]);
-            }
-
-            return sb.ToString();
+            return sb;
         }
     }
 }
