@@ -29,6 +29,18 @@ namespace Diamond.Core
                 }
             }
 
+            var firstHalf = sb.ToString();
+            if (letter == 'A')
+            {
+                return firstHalf;
+            }
+
+            var lines = firstHalf.Split(Environment.NewLine, StringSplitOptions.RemoveEmptyEntries);
+            for (int i = lines.Length - 2; i >= 0; i--)
+            {
+                sb.AppendLine(lines[i]);
+            }
+
             return sb.ToString();
         }
     }

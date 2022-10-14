@@ -35,7 +35,7 @@ namespace Diamond.Core.Tests
         }
 
         [Test]
-        public void GivenC_PrintsABBCC_WithNewLines_AndSpaces()
+        public void GivenC_PrintsABBCC_WithNewLines_AndSpaces_AndCorrectSuffix()
         {
             // act
             var result = printer.Print('C');
